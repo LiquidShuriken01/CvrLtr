@@ -29,13 +29,13 @@ export default function App() {
   }, [page]);
   
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1, justifyContent: 'center'}}>
       <ImageBackground 
         source={require('./assets/abstract-blue-background.jpg')}
         style={styles.background}
         resizeMode="cover"
       >
-        <View style={styles.container}>
+        <View>
           <Text  style={styles.paragraph}> {text} </Text>
         </View>
         <View style={styles.page_buttons}>
@@ -47,7 +47,7 @@ export default function App() {
           <Button
             title="Next Page"
             onPress={() => setPage(page + 1)}
-            disabled={page >= 3}
+            disabled={page >= 4}
           />
         </View>          
       </ImageBackground>
@@ -70,19 +70,27 @@ const styles = StyleSheet.create({
     fontSize: 24,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    width: '100%',
+    flexShrink: 1,
+    margin: 20,
     flexWrap: 'wrap',
     padding: 20,
   },
   page_buttons: {
+    position: 'absolute',
+    bottom: 40,
+    left: 120,
+    right: 120,
     flexDirection: 'row',
-    alignItems: 'flex-end',
     justifyContent: 'space-between',
-    width: '100%',
-    paddingHorizontal: 200,
-    paddingBottom: 100,
   },
   background: {
     flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
   },
 });

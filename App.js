@@ -15,7 +15,7 @@ export default function App() {
   }, [x]);
   
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, justifyContent: 'center'}}>
       <ImageBackground 
         source={require('./assets/abstract-blue-background.jpg')}
         style={styles.background}
